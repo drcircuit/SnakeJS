@@ -39,7 +39,6 @@ Snake.prototype.setDirection = function(direction){
 Snake.prototype.grow = function(){
     var x = (this.tail.length > 0) ? this.tail[0].x + (this.size-1) * this.incX : this.x;
     var y = (this.tail.length > 0) ? this.tail[0].y + (this.size-1) * this.incY : this.y;
-    console.log(x + ' ' + y);
    this.tail.unshift(new SnakeSegment(this.x, this.y, this.size, this.color));
 };
 Snake.prototype.move = function(){
@@ -53,7 +52,7 @@ Snake.prototype.move = function(){
         this.x = 0 - this.size;
     } else if (this.y < 0 - this.size){
         this.y = world.height + this.size;
-    } else if (this.y > world.height + this.size){
+} else if (this.y > world.height + this.size){
         this.y = 0 - this.size;
     }
 
